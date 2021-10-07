@@ -1,0 +1,33 @@
+<div [formGroup]="form" class="form-group">
+  <label [for]="controlName" class="form-label">{{ label }}</label>
+  <div class="form-control-container">
+    <input
+      [formControlName]="controlName"
+      [id]="controlName"
+      [ngClass]="
+        form.get(controlName)?.invalid &&
+        (form.get(controlName)?.touched || form.get(controlName)?.dirty)
+          ? 'invalid-control'
+          : ''
+      "
+      class="form-control"
+      type="number"
+    />
+    <div
+      *ngIf="
+        form.get(controlName)?.invalid &&
+        (form.get(controlName)?.touched || form.get(controlName)?.dirty)
+      "
+    >
+      <small *ngIf="form.get(controlName)?.errors?.min" class="error-message">
+        Значение поля должно быть больше 0.
+      </small>
+      <small
+        *ngIf="form.get(controlName)?.errors?.required"
+        class="error-message"
+      >
+        Это поле обязательно.
+      </small>
+    </div>
+  </div>
+</div>

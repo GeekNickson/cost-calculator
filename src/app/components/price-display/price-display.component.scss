@@ -1,0 +1,7 @@
+.cost-type::after {
+  content: ": ";
+}
+
+.cost-price::after {
+  content: " ₽";
+}

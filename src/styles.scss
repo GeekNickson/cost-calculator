@@ -1,1 +1,124 @@
 /* You can add global styles to this file, and also import other style files */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 2rem 3rem;
+  margin: auto;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0.25rem;
+}
+
+.form-group .form-control-container {
+  flex-basis: 70%;
+}
+
+.form-group .form-label {
+  flex-basis: 30%;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 1px;
+  padding: 0.15rem 0.1rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 400;
+  &:focus {
+    outline: 0;
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.15rem rgb(74 154 193 / 50%);
+  }
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.form-label {
+  font-weight: 600;
+  &::after {
+    content: ":";
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-100 {
+  flex-basis: 100%;
+}
+
+.btn {
+  outline: 0;
+  padding: 0.25rem 0.375rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-submit {
+  background-color: #1ca1c1;
+  color: white;
+  &:hover {
+    background-color: #258ba5;
+  }
+  &:active:focus {
+    box-shadow: 0 0 0 0.15rem rgb(74 154 193 / 50%);
+  }
+  transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -1px;
+}
+
+.card-header {
+  padding: 0.5rem 1rem;
+  background-color: #f4f5f9;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.list-item {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  &:first-child {
+    border-top: 0px;
+  }
+}
+
+.error-message {
+  color: rgb(209, 49, 49);
+}
+
+.invalid-control {
+  box-shadow: 0 0 0 0.15rem rgb(209 49 49 / 50%);
+}
